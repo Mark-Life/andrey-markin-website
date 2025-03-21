@@ -27,7 +27,7 @@ export default function Hero() {
           </div>
 
           {/* Main heading */}
-          <h1 className="text-5xl md:text-7xl lg:text-9xl font-bold mb-6 leading-tight font-gothic">
+          <h1 className="text-[5rem] md:text-[8rem] lg:text-[13rem] font-bold mb-8 leading-[0.9] font-gothic tracking-tighter">
             Launch Your{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Business</span>{" "}
             with AI
