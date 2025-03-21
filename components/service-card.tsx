@@ -12,9 +12,9 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ title, description, items, link }: ServiceCardProps) {
   return (
-    <Card className="h-full flex flex-col bg-secondary/50 hover:bg-secondary/70 transition-colors border-primary/20 hover:border-primary/40">
+    <Card className="h-full flex flex-col bg-secondary/50 hover:bg-secondary/70 transition-colors border-primary/10 hover:border-primary/40">
       <CardHeader>
-        <CardTitle className="text-xl">{title}</CardTitle>
+        <CardTitle className="text-xl text-primary">{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent className="flex-grow">
