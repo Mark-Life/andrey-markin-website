@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" style={{colorScheme: "dark"}}>
       <body className="bg-background min-h-screen">
         <ThemeProvider
           attribute="class"
