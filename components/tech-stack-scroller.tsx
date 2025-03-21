@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import { Card } from "@/components/ui/card"
+// import { Card } from "@/components/ui/card"
 
 export interface TechItem {
   name: string
@@ -16,10 +16,10 @@ interface TechStackScrollerProps {
 export default function TechStackScroller({ items, className }: TechStackScrollerProps) {
   return (
     <div className={cn("w-full py-4", className)}>
-      <Card className="flex flex-wrap justify-center gap-6 p-4 bg-primary/30 hover:bg-primary/70 transition-colors border-primary/20 hover:border-primary/40">
+      <div className="flex flex-wrap justify-center gap-6 p-4">
         {items.map((tech, index) => (
           <div key={index} className="flex flex-col items-center justify-center">
-            <div className="rounded-full mb-2 w-10 h-10 flex items-center justify-center">
+            <div className="rounded-full w-10 h-10 flex items-center justify-center">
               <img
                 src={tech.logo || "/placeholder.svg?height=60&width=60"}
                 alt={tech.name}
@@ -29,7 +29,7 @@ export default function TechStackScroller({ items, className }: TechStackScrolle
             {/* <span className="text-sm font-medium">{tech.name}</span> */}
           </div>
         ))}
-      </Card>
+      </div>
     </div>
   )
 }

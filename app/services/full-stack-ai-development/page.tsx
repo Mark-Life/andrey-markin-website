@@ -38,6 +38,76 @@ const developmentSteps: ProcessStep[] = [
   },
 ]
 
+// Define service cards
+type ServiceCard = {
+  icon: React.ReactNode
+  title: string
+  features: string[]
+}
+
+const serviceCards: ServiceCard[] = [
+  {
+    icon: <Cpu className="text-primary h-6 w-6" />,
+    title: "AI-Powered Applications",
+    features: [
+      "Custom AI assistants and chatbots",
+      "Intelligent document processing",
+      "Predictive analytics dashboards",
+      "AI-enhanced customer experiences",
+    ],
+  },
+  {
+    icon: <Globe className="text-primary h-6 w-6" />,
+    title: "Web & Mobile Development",
+    features: [
+      "Progressive Web Applications",
+      "Cross-platform mobile apps",
+      "E-commerce with AI recommendations",
+      "Real-time collaborative platforms",
+    ],
+  },
+  {
+    icon: <Database className="text-primary h-6 w-6" />,
+    title: "Data & Backend Solutions",
+    features: [
+      "Scalable cloud infrastructure",
+      "Data pipelines and ETL processes",
+      "API development and integration",
+      "Database design and optimization",
+    ],
+  },
+  {
+    icon: <Server className="text-primary h-6 w-6" />,
+    title: "Enterprise Integration",
+    features: [
+      "CRM and ERP system integration",
+      "Legacy system modernization",
+      "Custom middleware development",
+      "Multi-platform data synchronization",
+    ],
+  },
+  {
+    icon: <Code className="text-primary h-6 w-6" />,
+    title: "Custom Business Applications",
+    features: [
+      "AI-powered CRM systems",
+      "Intelligent inventory management",
+      "HR platforms with AI screening",
+      "Custom booking and scheduling",
+    ],
+  },
+  {
+    icon: <Zap className="text-primary h-6 w-6" />,
+    title: "AI Feature Integration",
+    features: [
+      "Natural language search capabilities",
+      "Image recognition and processing",
+      "Predictive analytics for business",
+      "Voice interfaces and assistants",
+    ],
+  },
+]
+
 export default function FullStackAIDevelopmentPage() {
   return (
     <main className="min-h-screen">
@@ -85,7 +155,7 @@ export default function FullStackAIDevelopmentPage() {
 
       {/* Rest of the component remains the same */}
       {/* Tech Stack Section */}
-      <section className="py-8">
+      <section className="">
         <div className="container mx-auto px-4">
           <TechStackScroller items={aiDevelopmentStack} />
         </div>
@@ -109,179 +179,25 @@ export default function FullStackAIDevelopmentPage() {
           <h2 className="text-3xl font-bold mb-12 text-center">Comprehensive AI Development Services</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Card 1 */}
-            <div className="bg-background rounded-lg p-8 shadow-lg border border-primary/20 hover:border-primary/50 transition-all">
-              <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
-                <Cpu className="text-primary h-6 w-6" />
+            {serviceCards.map((card, index) => (
+              <div 
+                key={index} 
+                className="bg-background rounded-lg p-8 shadow-lg border border-primary/20 hover:border-primary/50 transition-all"
+              >
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
+                  {card.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-4">{card.title}</h3>
+                <ul className="space-y-3 mb-6">
+                  {card.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start">
+                      <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="text-xl font-bold mb-4">AI-Powered Applications</h3>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>Custom AI assistants and chatbots</span>
-                </li>
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>Intelligent document processing</span>
-                </li>
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>Predictive analytics dashboards</span>
-                </li>
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>AI-enhanced customer experiences</span>
-                </li>
-              </ul>
-              <Button asChild variant="outline" className="w-full">
-                <Link href="/#contact">Learn More</Link>
-              </Button>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-background rounded-lg p-8 shadow-lg border border-primary/20 hover:border-primary/50 transition-all hover:translate-y-[-5px]">
-              <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
-                <Globe className="text-primary h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold mb-4">Web & Mobile Development</h3>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>Progressive Web Applications</span>
-                </li>
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>Cross-platform mobile apps</span>
-                </li>
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>E-commerce with AI recommendations</span>
-                </li>
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>Real-time collaborative platforms</span>
-                </li>
-              </ul>
-              <Button asChild variant="outline" className="w-full">
-                <Link href="/#contact">Learn More</Link>
-              </Button>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-background rounded-lg p-8 shadow-lg border border-primary/20 hover:border-primary/50 transition-all">
-              <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
-                <Database className="text-primary h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold mb-4">Data & Backend Solutions</h3>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>Scalable cloud infrastructure</span>
-                </li>
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>Data pipelines and ETL processes</span>
-                </li>
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>API development and integration</span>
-                </li>
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>Database design and optimization</span>
-                </li>
-              </ul>
-              <Button asChild variant="outline" className="w-full">
-                <Link href="/#contact">Learn More</Link>
-              </Button>
-            </div>
-
-            {/* Card 4 */}
-            <div className="bg-background rounded-lg p-8 shadow-lg border border-primary/20 hover:border-primary/50 transition-all">
-              <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
-                <Server className="text-primary h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold mb-4">Enterprise Integration</h3>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>CRM and ERP system integration</span>
-                </li>
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>Legacy system modernization</span>
-                </li>
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>Custom middleware development</span>
-                </li>
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>Multi-platform data synchronization</span>
-                </li>
-              </ul>
-              <Button asChild variant="outline" className="w-full">
-                <Link href="/#contact">Learn More</Link>
-              </Button>
-            </div>
-
-            {/* Card 5 */}
-            <div className="bg-background rounded-lg p-8 shadow-lg border border-primary/20 hover:border-primary/50 transition-all">
-              <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
-                <Code className="text-primary h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold mb-4">Custom Business Applications</h3>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>AI-powered CRM systems</span>
-                </li>
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>Intelligent inventory management</span>
-                </li>
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>HR platforms with AI screening</span>
-                </li>
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>Custom booking and scheduling</span>
-                </li>
-              </ul>
-              <Button asChild variant="outline" className="w-full">
-                <Link href="/#contact">Learn More</Link>
-              </Button>
-            </div>
-
-            {/* Card 6 */}
-            <div className="bg-background rounded-lg p-8 shadow-lg border border-primary/20 hover:border-primary/50 transition-all">
-              <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
-                <Zap className="text-primary h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold mb-4">AI Feature Integration</h3>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>Natural language search capabilities</span>
-                </li>
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>Image recognition and processing</span>
-                </li>
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>Predictive analytics for business</span>
-                </li>
-                <li className="flex items-start">
-                  <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                  <span>Voice interfaces and assistants</span>
-                </li>
-              </ul>
-              <Button asChild variant="outline" className="w-full">
-                <Link href="/#contact">Learn More</Link>
-              </Button>
-            </div>
+            ))}
           </div>
         </div>
       </section>
