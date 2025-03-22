@@ -2,38 +2,71 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { ArrowLeft, Check, Code, Database, Cpu, Zap, Server, Globe } from "lucide-react"
+import { ArrowLeft, Check, Code, Database, Cpu, Zap, Server, Globe, Bot, Brain, MessageSquare, BarChart, FileText, Image } from "lucide-react"
 import TechStackScroller from "@/components/tech-stack-scroller"
-import AIServiceShowcase from "./ai-service-showcase"
+import ServiceShowcase from "@/components/service-showcase"
 import DeviceFrame from "@/components/device-frame"
 import MinimalProcessStepper, { type ProcessStep } from "@/components/minimal-process-stepper"
 import { aiDevelopmentStack } from "@/data/tech-stacks"
+import { developmentSteps } from "@/data/dev-process"
 
-// Define the development process steps
-const developmentSteps: ProcessStep[] = [
+// Define AI services data
+const aiServices = [
   {
-    number: 1,
-    title: "Idea & Planning",
+    id: "chatbots",
+    name: "AI Chatbots",
+    icon: <MessageSquare className="h-5 w-5" />,
     description:
-      "You share your idea, and we provide you with tech stack, deployment strategy, and project timeline. We'll work together to define the scope, features, and technical requirements to ensure we're aligned on the vision and goals for your project.",
+      "Intelligent conversational agents that can handle customer inquiries, provide support, and automate routine tasks.",
+    // demo: "/placeholder.svg?height=600&width=300",
+    features: [
+      "Natural language understanding",
+      "Multi-platform integration",
+      "Personalized responses",
+      "Seamless handoff to human agents",
+    ],
   },
   {
-    number: 2,
-    title: "Proof of Concept | 3-5 days",
+    id: "analytics",
+    name: "Predictive Analytics",
+    icon: <BarChart className="h-5 w-5" />,
     description:
-      "Within just a few days, we create a working proof of concept to test the core ideas and functionalities. This rapid prototype helps validate technical feasibility and gives you something tangible to evaluate before committing to full development.",
+      "Data-driven insights and forecasting to help you make better business decisions and identify opportunities.",
+    demo: "/placeholder.svg?height=600&width=300",
+    features: ["Sales forecasting", "Customer behavior analysis", "Trend identification", "Anomaly detection"],
   },
   {
-    number: 3,
-    title: "First Iteration of MVP | 2 weeks",
-    description:
-      "We quickly develop the first version of the MVP, allowing the business to validate their idea in a real-world environment. This focused approach delivers core functionality that can be tested with real users to gather valuable feedback early in the process.",
+    id: "document",
+    name: "Document Processing",
+    icon: <FileText className="h-5 w-5" />,
+    description: "Automated extraction and analysis of information from documents, invoices, receipts, and forms.",
+    demo: "/placeholder.svg?height=600&width=300",
+    features: ["OCR and data extraction", "Form processing", "Document classification", "Information validation"],
   },
   {
-    number: 4,
-    title: "Validation and Improvements",
+    id: "vision",
+    name: "Computer Vision",
+    icon: <Image className="h-5 w-5" />,
+    description: "Image and video analysis solutions for object detection, recognition, and visual inspection.",
+    demo: "/placeholder.svg?height=600&width=300",
+    features: ["Object detection", "Facial recognition", "Product visual inspection", "Image classification"],
+  },
+  {
+    id: "agents",
+    name: "AI Agents",
+    icon: <Bot className="h-5 w-5" />,
     description:
-      "After validation, we make improvements, add robust features, conduct testing, and provide deployment support. Based on user feedback and performance data, we refine the product, enhance the user experience, and ensure everything is production-ready.",
+      "Autonomous AI agents that can perform complex tasks, make decisions, and interact with other systems.",
+    demo: "/placeholder.svg?height=600&width=300",
+    features: ["Task automation", "Multi-agent coordination", "Workflow optimization", "Adaptive learning"],
+  },
+  {
+    id: "nlp",
+    name: "NL Processing",
+    icon: <Brain className="h-5 w-5" />,
+    description: "Text analysis, sentiment detection, and language generation for content creation and analysis.",
+    demo: "/placeholder.svg?height=600&width=300",
+    features: ["Sentiment analysis", "Content summarization", "Language translation", "Text classification"],
   },
 ]
 
@@ -151,7 +184,6 @@ export default function FullStackAIDevelopmentPage() {
         </div>
       </section>
 
-      {/* Rest of the component remains the same */}
       {/* Tech Stack Section */}
       <section className="">
         <div className="container mx-auto px-4">
@@ -167,7 +199,10 @@ export default function FullStackAIDevelopmentPage() {
             Explore the possibilities of AI integration for your business
           </p>
 
-          <AIServiceShowcase />
+          <ServiceShowcase 
+            services={aiServices}
+            contactText="Start Your"
+          />
         </div>
       </section>
 

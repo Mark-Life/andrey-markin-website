@@ -2,72 +2,26 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Bot, Brain, MessageSquare, BarChart, FileText, Image } from "lucide-react"
 import DeviceFrame from "@/components/device-frame"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 
-const aiServices = [
-  {
-    id: "chatbots",
-    name: "AI Chatbots",
-    icon: <MessageSquare className="h-5 w-5" />,
-    description:
-      "Intelligent conversational agents that can handle customer inquiries, provide support, and automate routine tasks.",
-    demo: "/placeholder.svg?height=600&width=300",
-    features: [
-      "Natural language understanding",
-      "Multi-platform integration",
-      "Personalized responses",
-      "Seamless handoff to human agents",
-    ],
-  },
-  {
-    id: "analytics",
-    name: "Predictive Analytics",
-    icon: <BarChart className="h-5 w-5" />,
-    description:
-      "Data-driven insights and forecasting to help you make better business decisions and identify opportunities.",
-    demo: "/placeholder.svg?height=600&width=300",
-    features: ["Sales forecasting", "Customer behavior analysis", "Trend identification", "Anomaly detection"],
-  },
-  {
-    id: "document",
-    name: "Document Processing",
-    icon: <FileText className="h-5 w-5" />,
-    description: "Automated extraction and analysis of information from documents, invoices, receipts, and forms.",
-    demo: "/placeholder.svg?height=600&width=300",
-    features: ["OCR and data extraction", "Form processing", "Document classification", "Information validation"],
-  },
-  {
-    id: "vision",
-    name: "Computer Vision",
-    icon: <Image className="h-5 w-5" />,
-    description: "Image and video analysis solutions for object detection, recognition, and visual inspection.",
-    demo: "/placeholder.svg?height=600&width=300",
-    features: ["Object detection", "Facial recognition", "Product visual inspection", "Image classification"],
-  },
-  {
-    id: "agents",
-    name: "AI Agents",
-    icon: <Bot className="h-5 w-5" />,
-    description:
-      "Autonomous AI agents that can perform complex tasks, make decisions, and interact with other systems.",
-    demo: "/placeholder.svg?height=600&width=300",
-    features: ["Task automation", "Multi-agent coordination", "Workflow optimization", "Adaptive learning"],
-  },
-  {
-    id: "nlp",
-    name: "NL Processing",
-    icon: <Brain className="h-5 w-5" />,
-    description: "Text analysis, sentiment detection, and language generation for content creation and analysis.",
-    demo: "/placeholder.svg?height=600&width=300",
-    features: ["Sentiment analysis", "Content summarization", "Language translation", "Text classification"],
-  },
-]
+interface ServiceFeature {
+  id: string
+  name: string
+  icon: React.ReactNode
+  description: string
+  demo?: string
+  features: string[]
+}
 
-export default function AIServiceShowcase() {
-  const [activeTab, setActiveTab] = useState("chatbots")
+interface ServiceShowcaseProps {
+  services: ServiceFeature[]
+  contactText?: string
+}
+
+export default function ServiceShowcase({ services, contactText = "Discuss Your Project" }: ServiceShowcaseProps) {
+  const [activeTab, setActiveTab] = useState(services[0]?.id || "")
 
   return (
     <div className="w-full">
@@ -78,7 +32,7 @@ export default function AIServiceShowcase() {
           value={activeTab}
           onChange={(e) => setActiveTab(e.target.value)}
         >
-          {aiServices.map((service) => (
+          {services.map((service) => (
             <option key={service.id} value={service.id}>
               {service.name}
             </option>
@@ -91,7 +45,7 @@ export default function AIServiceShowcase() {
         {/* Left side tabs for desktop */}
         <div className="hidden md:block w-full md:w-64 flex-shrink-0 content-center">
           <div className="flex flex-col gap-2 sticky top-24">
-            {aiServices.map((service) => (
+            {services.map((service) => (
               <button
                 key={service.id}
                 onClick={() => setActiveTab(service.id)}
@@ -111,7 +65,7 @@ export default function AIServiceShowcase() {
 
         {/* Content area */}
         <div className="flex-grow">
-          {aiServices.map((service) => (
+          {services.map((service) => (
             <div
               key={service.id}
               className={cn(
@@ -119,7 +73,10 @@ export default function AIServiceShowcase() {
                 activeTab === service.id ? "block opacity-100" : "hidden opacity-0",
               )}
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div className={cn(
+                "grid gap-8 items-center",
+                service.demo ? "grid-cols-1 lg:grid-cols-2" : "grid-cols-1"
+              )}>
                 <div>
                   <h3 className="text-2xl font-bold mb-4">{service.name}</h3>
                   <p className="text-foreground/80 mb-6">{service.description}</p>
@@ -154,19 +111,21 @@ export default function AIServiceShowcase() {
                   </div>
 
                   <Button asChild>
-                    <Link href="/#contact">Discuss Your {service.name} Project</Link>
+                    <Link href="/#contact">{contactText} {service.name}</Link>
                   </Button>
                 </div>
 
-                <div className="flex justify-center">
-                  <DeviceFrame>
-                    <img
-                      src={service.demo || "/placeholder.svg"}
-                      alt={`${service.name} Demo`}
-                      className="w-full h-full object-cover rounded-lg"
-                    />
-                  </DeviceFrame>
-                </div>
+                {service.demo && (
+                  <div className="flex justify-center">
+                    <DeviceFrame>
+                      <img
+                        src={service.demo}
+                        alt={`${service.name} Demo`}
+                        className="w-full h-full object-cover rounded-lg"
+                      />
+                    </DeviceFrame>
+                  </div>
+                )}
               </div>
             </div>
           ))}
