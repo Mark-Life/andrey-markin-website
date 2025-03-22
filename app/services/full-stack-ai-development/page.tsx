@@ -5,10 +5,9 @@ import Link from "next/link"
 import { ArrowLeft, Check, Code, Database, Cpu, Zap, Server, Globe } from "lucide-react"
 import TechStackScroller from "@/components/tech-stack-scroller"
 import AIServiceShowcase from "./ai-service-showcase"
-import DeviceFrame from "./device-frame"
+import DeviceFrame from "@/components/device-frame"
 import MinimalProcessStepper, { type ProcessStep } from "@/components/minimal-process-stepper"
 import { aiDevelopmentStack } from "@/data/tech-stacks"
-import MatrixBackground from "@/components/matrix-background"
 
 // Define the development process steps
 const developmentSteps: ProcessStep[] = [
@@ -112,7 +111,6 @@ export default function FullStackAIDevelopmentPage() {
   return (
     <main className="min-h-screen">
       <Navbar />
-      {/* <MatrixBackground /> */}
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 relative">

@@ -12,7 +12,7 @@ export const projectsById: Record<string, Project> = {
     id: 'TradeCaptureAI',
     title: "TradeCapture AI",
     description: "Mobile app for SDRs to capture leads at tradeshows with AI assistance",
-    image: "https://lxbpjvrr41.ufs.sh/f/6KZjuRTQYJxHTPcBsxkDe7KZ3qSBQ8E1Yw2vu6bIcXGVmk9R?height=400&width=600",
+    image: "https://lxbpjvrr41.ufs.sh/f/6KZjuRTQYJxHTPcBsxkDe7KZ3qSBQ8E1Yw2vu6bIcXGVmk9R",
     tags: ["React Native", "Expo", "OpenAI", "Supabase"],
     link: "/projects/tradecapture-ai",
   },

@@ -1,19 +1,12 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-
-// const spaceGrotesk = Space_Grotesk({
-//   subsets: ["latin"],
-//   weight: ["300", "400", "600", "700"],
-// })
 
 export const metadata: Metadata = {
   title: "Andrey Markin | Full-Stack AI Development",
   description:
     "Transform your business ideas into powerful software solutions with AI capabilities",
-  generator: "v0.dev",
 };
 
 export default function RootLayout({

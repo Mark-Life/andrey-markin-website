@@ -44,7 +44,7 @@ export default function TradeCapturePage() {
             <div className="aspect-video bg-secondary/50 rounded-lg overflow-hidden mb-8">
               <Image
                 src={projectsById.TradeCaptureAI.image}
-                alt="TradeCapture AI App Architecture"
+                alt="TradeCapture AI App"
                 className="w-full h-full object-cover"
                 width={800}
                 height={400}

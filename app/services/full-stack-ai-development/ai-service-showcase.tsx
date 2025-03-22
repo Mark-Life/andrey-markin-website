@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Bot, Brain, MessageSquare, BarChart, FileText, Image } from "lucide-react"
-import DeviceFrame from "./device-frame"
+import DeviceFrame from "@/components/device-frame"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 

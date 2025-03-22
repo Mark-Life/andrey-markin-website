@@ -19,7 +19,7 @@ export default function MinimalProcessStepper({ steps, className }: MinimalProce
       {steps.map((step) => (
         <div
           key={step.number}
-          className={cn("transition-colors cursor-pointer", "opacity-100")}
+          className={cn("transition-colors", "opacity-100")}
         >
           <div className="flex items-baseline gap-3 mb-2">
             <span className="text-lg font-medium text-primary">{step.number}.</span>
