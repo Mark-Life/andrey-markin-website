@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import DeviceFrame from "@/components/device-frame"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 
@@ -11,7 +10,6 @@ interface ServiceFeature {
   name: string
   icon: React.ReactNode
   description: string
-  demo?: string
   features: string[]
 }
 
@@ -24,7 +22,7 @@ export default function ServiceShowcase({ services, contactText = "Discuss Your 
   const [activeTab, setActiveTab] = useState(services[0]?.id || "")
 
   return (
-    <div className="w-full">
+    <div className="max-w-screen-lg mx-auto">
       {/* Mobile dropdown selector */}
       <div className="block md:hidden mb-6">
         <select
@@ -73,20 +71,17 @@ export default function ServiceShowcase({ services, contactText = "Discuss Your 
                 activeTab === service.id ? "block opacity-100" : "hidden opacity-0",
               )}
             >
-              <div className={cn(
-                "grid gap-8 items-center",
-                service.demo ? "grid-cols-1 lg:grid-cols-2" : "grid-cols-1"
-              )}>
+              <div className="grid grid-cols-1 gap-8">
                 <div>
                   <h3 className="text-2xl font-bold mb-4">{service.name}</h3>
                   <p className="text-foreground/80 mb-6">{service.description}</p>
 
                   <div className="mb-8">
                     <h4 className="font-medium mb-3">Key Features:</h4>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3">
                       {service.features.map((feature, index) => (
-                        <li key={index} className="flex items-start">
-                          <span className="bg-primary/20 p-1 rounded-full mr-2 mt-0.5">
+                        <li key={index} className="flex items-start flex-shrink-0 min-w-0">
+                          <span className="bg-primary/20 p-1 rounded-full mr-2 mt-0.5 flex-shrink-0">
                             <svg
                               width="14"
                               height="14"
@@ -104,7 +99,7 @@ export default function ServiceShowcase({ services, contactText = "Discuss Your 
                               />
                             </svg>
                           </span>
-                          {feature}
+                          <span className="min-w-0 truncate">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -114,18 +109,6 @@ export default function ServiceShowcase({ services, contactText = "Discuss Your 
                     <Link href="/#contact">{contactText} {service.name}</Link>
                   </Button>
                 </div>
-
-                {service.demo && (
-                  <div className="flex justify-center">
-                    <DeviceFrame>
-                      <img
-                        src={service.demo}
-                        alt={`${service.name} Demo`}
-                        className="w-full h-full object-cover rounded-lg"
-                      />
-                    </DeviceFrame>
-                  </div>
-                )}
               </div>
             </div>
           ))}
