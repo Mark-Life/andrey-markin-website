@@ -7,15 +7,10 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    title: "AI Fundraising",
-    description: "Innovative solutions for non-profits",
-    items: [
-      "Donor Management Platforms",
-      "Automated Reporting Systems",
-      "Digital Transformation",
-      "NGO & Social Impact Solutions",
-    ],
-    link: "/services/ai-fundraising",
+    title: "Full-stack AI Development",
+    description: "Transform ideas into AI-powered solutions",
+    items: ["Custom AI Solutions", "Automation Systems", "Data Pipeline Development", "Full-stack App deployments"],
+    link: "/services/full-stack-ai-development",
   },
   {
     title: "Web Development",
@@ -24,10 +19,15 @@ export const services: Service[] = [
     link: "/services/web-development",
   },
   {
-    title: "Full-stack AI Development",
-    description: "Transform ideas into AI-powered solutions",
-    items: ["Custom AI Solutions", "Automation Systems", "Data Pipeline Development", "Full-stack App deployments"],
-    link: "/services/full-stack-ai-development",
+    title: "Bots & Automation Solutions",
+    description: "Streamline workflows with automation",
+    items: [
+      "Discord, Slack, Telegram, etc.",
+      "API Integrations",
+      "Database Automation Systems",
+      "Workflow Automation Tools",
+    ],
+    link: "/services/bots-automation-solutions",
   },
   {
     title: "Data Management & Analytics",
@@ -52,15 +52,15 @@ export const services: Service[] = [
     link: "/services/chatbot-customer-success",
   },
   {
-    title: "Bots & Automation Solutions",
-    description: "Streamline workflows with automation",
+    title: "AI Fundraising",
+    description: "Innovative solutions for non-profits",
     items: [
-      "Discord, Slack, Telegram, etc.",
-      "API Integrations",
-      "Database Automation Systems",
-      "Workflow Automation Tools",
+      "Donor Management Platforms",
+      "Automated Reporting Systems",
+      "Digital Transformation",
+      "NGO & Social Impact Solutions",
     ],
-    link: "/services/bots-automation-solutions",
+    link: "/services/ai-fundraising",
   },
 ]
 
