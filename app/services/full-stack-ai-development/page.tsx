@@ -1,17 +1,22 @@
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { ArrowLeft, Code, Database, Cpu, Zap, Server, Globe, Bot, Brain, MessageSquare, BarChart, FileText, Image as ImageIcon } from "lucide-react"
-import Image from "next/image"
-import TechStackScroller from "@/components/tech-stack-scroller"
-import ServiceShowcase from "@/components/services/service-showcase"
-import DeviceFrame from "@/components/device-frame"
-import MinimalProcessStepper, { type ProcessStep } from "@/components/minimal-process-stepper"
+import { 
+  MessageSquare, 
+  BarChart, 
+  FileText, 
+  Image as ImageIcon, 
+  Bot, 
+  Brain, 
+  Cpu, 
+  Globe, 
+  Database, 
+  Server, 
+  Code, 
+  Zap 
+} from "lucide-react"
+import ServicePage, { 
+  ServiceCardItem, 
+  ServiceShowcaseItem 
+} from "@/components/services/service-page"
 import { TechItem } from "@/data/tech-stacks"
-import { developmentSteps } from "@/data/dev-process"
-import CTASection from "@/components/services/cta-section"
-import ServiceGridSection from "@/components/services/service-grid-section"
 
 // Define tech stack data
 const aiDevelopmentStack: TechItem[] = [
@@ -83,7 +88,7 @@ const aiDevelopmentStack: TechItem[] = [
 ]
 
 // Define AI services data
-const aiServices = [
+const aiServices: ServiceShowcaseItem[] = [
   {
     id: "chatbots",
     name: "AI Chatbots",
@@ -137,7 +142,7 @@ const aiServices = [
 ]
 
 // Define service cards
-const serviceCards = [
+const serviceCards: ServiceCardItem[] = [
   {
     icon: <Cpu className="text-primary h-6 w-6" />,
     title: "AI-Powered Applications",
@@ -202,99 +207,23 @@ const serviceCards = [
 
 export default function FullStackAIDevelopmentPage() {
   return (
-    <main className="min-h-screen">
-      <Navbar />
-
-      {/* Hero Section */}
-      <section className="pt-20 md:pt-32 pb-12 md:pb-16 relative">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center mb-6 md:mb-8">
-            <Button asChild variant="outline" size="sm" className="mr-4">
-              <Link href="/services">
-                <ArrowLeft size={16} className="mr-2" /> Back to Services
-              </Link>
-            </Button>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center">
-            <div className="lg:col-span-4">
-              <h1 className="text-5xl md:text-5xl xl:text-6xl font-bold mb-3 md:mb-4 text-primary">Full-Stack AI Development</h1>
-              <p className="text-base sm:text-lg md:text-xl xl:text-2xl text-foreground/80 mb-5 md:mb-6 leading-tight">
-                Transform your business ideas into powerful software solutions with cutting-edge AI capabilities
-              </p>
-              <div className="flex flex-wrap gap-3 md:gap-4 mb-8 lg:mb-0">
-                <Button asChild size="lg" className="text-base md:text-lg">
-                  <Link href="/#contact">Start Your Project</Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="text-base md:text-lg">
-                  <Link href="#services">Explore Services</Link>
-                </Button>
-              </div>
-            </div>
-            <div className="lg:col-span-8 relative w-full">
-              <div className="w-full overflow-hidden">
-                <DeviceFrame type="macos">
-                  <Image
-                    src="https://lxbpjvrr41.ufs.sh/f/6KZjuRTQYJxHqlp4dpM3CM09gQvVGuoixZF58rBtkIcaYUWD"
-                    alt="AI Application Demo"
-                    width={900}
-                    height={500}
-                    className="w-full h-full object-cover"
-                  />
-                </DeviceFrame>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Tech Stack Section */}
-      <section className="">
-        <div className="container mx-auto px-4">
-          <TechStackScroller items={aiDevelopmentStack} />
-        </div>
-      </section>
-
-      {/* AI Services Showcase */}
-      <section id="services" className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-4 text-center">AI Solutions</h2>
-          <p className="text-xl text-foreground/80 max-w-3xl mx-auto mb-12 text-center">
-            Explore the possibilities of AI integration for your business
-          </p>
-
-          <ServiceShowcase 
-            services={aiServices}
-            contactText="Start Your"
-          />
-        </div>
-      </section>
-
-      {/* Service Categories */}
-      <ServiceGridSection 
-        title="Comprehensive AI Development Services"
-        services={serviceCards}
-      />
-
-      {/* Process Section - Using the minimal component */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-3xl font-bold mb-12 text-center">Development Process</h2>
-
-          <MinimalProcessStepper steps={developmentSteps} />
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <CTASection 
-        heading="Ready to transform your business with AI?"
-        text="Let's discuss how custom AI solutions can help you achieve your business goals and stay ahead of the competition."
-        buttonText="Schedule a Consultation"
-        buttonHref="/#contact"
-      />
-
-      <Footer />
-    </main>
+    <ServicePage
+      title="Full-Stack AI Development"
+      description="Transform your business ideas into powerful software solutions with cutting-edge AI capabilities"
+      heroImage="https://lxbpjvrr41.ufs.sh/f/6KZjuRTQYJxHqlp4dpM3CM09gQvVGuoixZF58rBtkIcaYUWD"
+      heroImageAlt="AI Application Demo"
+      techStack={aiDevelopmentStack}
+      showcaseTitle="AI Solutions"
+      showcaseDescription="Explore the possibilities of AI integration for your business"
+      showcaseItems={aiServices}
+      showcaseContactText="Start Your"
+      serviceGridTitle="Comprehensive AI Development Services"
+      serviceGridItems={serviceCards}
+      ctaHeading="Ready to transform your business with AI?"
+      ctaText="Let's discuss how custom AI solutions can help you achieve your business goals and stay ahead of the competition."
+      ctaButtonText="Schedule a Consultation"
+      ctaButtonHref="/#contact"
+    />
   )
 }
 
