@@ -79,12 +79,15 @@ const config = {
     scroll: "scroll linear infinite",
    },
    fontFamily: {
-    sans: ['ui-sans-serif', 'system-ui'], // Keep your default sans-serif
-    gothic: ['Gothic60', 'sans-serif'], //  Match the font-family name in @font-face
+    sans: ['ui-sans-serif', 'system-ui'],
+    gothic: ['Gothic60', 'sans-serif'],
    },
   },
  },
- plugins: [require("tailwindcss-animate")],
+ plugins: [
+  require("tailwindcss-animate"),
+  require("@tailwindcss/typography"),
+ ],
 } satisfies Config
 
 export default config

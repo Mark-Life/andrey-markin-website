@@ -1,6 +1,5 @@
 import Navbar from "@/components/navbar"
 import Hero from "@/components/hero"
-import Hero2 from "@/components/hero-2"
 import ServicesSection from "@/components/services-section"
 import ProjectsSection from "@/components/projects-section"
 import ReviewsSection from "@/components/reviews-section"
@@ -12,8 +11,7 @@ export default function Home() {
   return (
     <main>
       <Navbar />
-      {/* <Hero /> */}
-      <Hero2 />
+      <Hero />
       <ServicesSection />
       <ProjectsSection />
       <ReviewsSection />

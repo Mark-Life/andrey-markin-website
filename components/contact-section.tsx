@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Calendar, User, Phone } from "lucide-react"
 import { useState } from "react"
+import { contact } from "@/data/contact"
 
 export default function ContactSection() {
   const [formState, setFormState] = useState({
@@ -66,8 +67,8 @@ export default function ContactSection() {
                 <div className="flex items-center">
                   <Mail className="h-5 w-5 text-primary mr-3" />
                   <div>
-                    <a href="mailto:108@mark-life.com" className="hover:text-primary transition-colors">
-                      108@mark-life.com
+                    <a href={`mailto:${contact.email}`} className="hover:text-primary transition-colors">
+                      {contact.email}
                     </a>
                   </div>
                 </div>
@@ -76,11 +77,11 @@ export default function ContactSection() {
                   <Calendar className="h-5 w-5 text-primary mr-3" />
                   <div>
                     <a
-                      href="#"
+                      href={contact.scheduleLink}
                       className="hover:text-primary transition-colors"
                       onClick={(e) => {
                         e.preventDefault()
-                        window.open("https://calendly.com", "_blank")
+                        window.open(contact.scheduleLink, "_blank")
                       }}
                     >
                       Schedule a meeting
@@ -101,14 +102,14 @@ export default function ContactSection() {
                 <h4 className="font-medium mb-4">Connect</h4>
                 <div className="flex space-x-4">
                   <a
-                    href="mailto:108@mark-life.com"
+                    href={`mailto:${contact.email}`}
                     className="bg-secondary hover:bg-secondary/80 p-3 rounded-full transition-colors"
                     aria-label="Email"
                   >
                     <Mail className="h-5 w-5 text-primary" />
                   </a>
                   <a
-                    href="https://wa.me/1234567890"
+                    href={contact.socialMedia.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-secondary hover:bg-secondary/80 p-3 rounded-full transition-colors"
@@ -130,7 +131,7 @@ export default function ContactSection() {
                     </svg>
                   </a>
                   <a
-                    href="https://t.me/username"
+                    href={contact.socialMedia.telegram}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-secondary hover:bg-secondary/80 p-3 rounded-full transition-colors"
@@ -152,13 +153,13 @@ export default function ContactSection() {
                       <path d="M22 2 11 13" />
                     </svg>
                   </a>
-                  <a
+                  {/* <a
                     href="tel:+1234567890"
                     className="bg-secondary hover:bg-secondary/80 p-3 rounded-full transition-colors"
                     aria-label="Phone"
                   >
                     <Phone className="h-5 w-5 text-primary" />
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </CardContent>

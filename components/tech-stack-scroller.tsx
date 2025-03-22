@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 export interface TechItem {
   name: string
   logo: string
+  invertColors?: boolean
 }
 
 interface TechStackScrollerProps {
@@ -23,7 +24,10 @@ export default function TechStackScroller({ items, className }: TechStackScrolle
               <img
                 src={tech.logo || "/placeholder.svg?height=60&width=60"}
                 alt={tech.name}
-                className="w-10 h-10 object-contain rounded-[8px]"
+                className={cn(
+                  "w-10 h-10 object-contain rounded-[8px]",
+                  tech.invertColors && "invert brightness-0 transition-all"
+                )}
               />
             </div>
             {/* <span className="text-sm font-medium">{tech.name}</span> */}

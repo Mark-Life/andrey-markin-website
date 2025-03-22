@@ -3,13 +3,13 @@ import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
-import MatrixBackground from "@/components/matrix-background"
+import Image from "next/image"
+import { projectsById } from "@/data/projects"
 
 export default function TradeCapturePage() {
   return (
     <main>
       <Navbar />
-      {/* <MatrixBackground /> */}
 
       <article className="pt-32 pb-20 relative">
         <div className="container mx-auto px-4 max-w-3xl">
@@ -42,10 +42,12 @@ export default function TradeCapturePage() {
           {/* Project Overview */}
           <section className="mb-16">
             <div className="aspect-video bg-secondary/50 rounded-lg overflow-hidden mb-8">
-              <img
-                src="/placeholder.svg?height=400&width=800"
+              <Image
+                src={projectsById.TradeCaptureAI.image}
                 alt="TradeCapture AI App Architecture"
                 className="w-full h-full object-cover"
+                width={800}
+                height={400}
               />
             </div>
             <div className="prose prose-invert max-w-none">

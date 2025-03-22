@@ -2,7 +2,7 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { projects } from "@/data/projects"
+import { projects, type Project } from "@/data/projects"
 
 export default function ProjectsSection() {
   // Only show up to 3 projects on the home page
@@ -27,8 +27,8 @@ export default function ProjectsSection() {
                   : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-full"
             }`}
           >
-            {featuredProjects.map((project, index) => (
-              <Card key={index} className="bg-secondary/50 border-primary/20 overflow-hidden h-full flex flex-col">
+            {featuredProjects.map((project: Project) => (
+              <Card key={project.id} className="bg-secondary/50 border-primary/20 overflow-hidden h-full flex flex-col">
                 <div className="aspect-video w-full overflow-hidden bg-muted">
                   <img
                     src={project.image || "/placeholder.svg"}
@@ -40,13 +40,13 @@ export default function ProjectsSection() {
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                   <p className="text-foreground/80 mb-4 flex-grow">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag, tagIndex) => (
-                      <span key={tagIndex} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
+                    {project.tags.map((tag) => (
+                      <span key={`${project.id}-${tag}`} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <Button asChild variant="outline" className="mt-auto">
+                  <Button asChild variant="outline" className="mt-auto hover:bg-primary/30">
                     <Link href={project.link} className="flex items-center justify-center">
                       View Project <ArrowRight size={16} className="ml-2" />
                     </Link>

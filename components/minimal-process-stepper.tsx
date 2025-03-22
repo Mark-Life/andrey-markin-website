@@ -22,7 +22,7 @@ export default function MinimalProcessStepper({ steps, className }: MinimalProce
           className={cn("transition-colors cursor-pointer", "opacity-100")}
         >
           <div className="flex items-baseline gap-3 mb-2">
-            <span className="text-lg font-medium text-foreground/70">{step.number}.</span>
+            <span className="text-lg font-medium text-primary">{step.number}.</span>
             <h3 className={cn("text-xl font-medium", "text-primary")}>
               {step.title}
             </h3>

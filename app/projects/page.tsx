@@ -5,13 +5,11 @@ import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { projects } from "@/data/projects"
-import MatrixBackground from "@/components/matrix-background"
 
 export default function ProjectsPage() {
   return (
     <main>
       <Navbar />
-      {/* <MatrixBackground /> */}
 
       <section className="pt-32 pb-20 relative">
         <div className="container mx-auto px-4">

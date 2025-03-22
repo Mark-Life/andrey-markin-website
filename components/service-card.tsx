@@ -21,12 +21,12 @@ export default function ServiceCard({ title, description, items, link }: Service
         <ul className="space-y-2 mb-6">
           {items.map((item, index) => (
             <li key={index} className="flex items-start">
-              <span className="text-primary mr-2">•</span>
+              <span className="mr-2">•</span>
               <span>{item}</span>
             </li>
           ))}
         </ul>
-        <Button asChild variant="outline" className="w-full mt-auto">
+        <Button asChild variant="outline" className="w-full mt-auto hover:bg-primary/30">
           <Link href={link} className="flex items-center justify-center">
             Learn more <ArrowRight size={16} className="" />
           </Link>
