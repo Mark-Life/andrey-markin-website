@@ -27,7 +27,7 @@ export default function ServiceCard({ title, description, items, link }: Service
           ))}
         </ul>
         <Button asChild variant="outline" className="w-full mt-auto hover:bg-primary/30">
-          <Link href={link} className="flex items-center justify-center">
+          <Link href={link} className="flex items-center justify-center" prefetch>
             Learn more <ArrowRight size={16} className="" />
           </Link>
         </Button>

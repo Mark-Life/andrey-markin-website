@@ -170,10 +170,10 @@ export default function FullStackAIDevelopmentPage() {
               <div className="w-full overflow-hidden">
                 <DeviceFrame type="macos">
                   <Image
-                    src="https://lxbpjvrr41.ufs.sh/f/6KZjuRTQYJxHmqfmYRQnVOUpwFEZs8WCxTD1BjtRqv2hl9kL"
+                    src="https://lxbpjvrr41.ufs.sh/f/6KZjuRTQYJxHqlp4dpM3CM09gQvVGuoixZF58rBtkIcaYUWD"
                     alt="AI Application Demo"
-                    width={1200}
-                    height={675}
+                    width={900}
+                    height={500}
                     className="w-full h-full object-cover"
                   />
                 </DeviceFrame>

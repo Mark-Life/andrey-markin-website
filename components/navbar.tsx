@@ -16,10 +16,10 @@ export default function Navbar() {
         </Link>
 
         <nav className="hidden md:flex items-center space-x-8">
-          <Link href="/services" className="text-foreground/80 hover:text-primary transition-colors">
+          <Link href="/services" className="text-foreground/80 hover:text-primary transition-colors" prefetch>
             Services
           </Link>
-          <Link href="/projects" className="text-foreground/80 hover:text-primary transition-colors">
+          <Link href="/projects" className="text-foreground/80 hover:text-primary transition-colors" prefetch>
             Projects
           </Link>
           <Link href="/#reviews" className="text-foreground/80 hover:text-primary transition-colors">

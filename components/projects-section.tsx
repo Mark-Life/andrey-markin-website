@@ -47,7 +47,7 @@ export default function ProjectsSection() {
                     ))}
                   </div>
                   <Button asChild variant="outline" className="mt-auto hover:bg-primary/30">
-                    <Link href={project.link} className="flex items-center justify-center">
+                    <Link href={project.link} className="flex items-center justify-center" prefetch>
                       View Project <ArrowRight size={16} className="ml-2" />
                     </Link>
                   </Button>
