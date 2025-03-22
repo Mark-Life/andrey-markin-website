@@ -2,7 +2,8 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { ArrowLeft, Check, Code, Database, Cpu, Zap, Server, Globe, Bot, Brain, MessageSquare, BarChart, FileText, Image } from "lucide-react"
+import { ArrowLeft, Check, Code, Database, Cpu, Zap, Server, Globe, Bot, Brain, MessageSquare, BarChart, FileText, Image as ImageIcon } from "lucide-react"
+import Image from "next/image"
 import TechStackScroller from "@/components/tech-stack-scroller"
 import ServiceShowcase from "@/components/service-showcase"
 import DeviceFrame from "@/components/device-frame"
@@ -18,7 +19,6 @@ const aiServices = [
     icon: <MessageSquare className="h-5 w-5" />,
     description:
       "Intelligent conversational agents that can handle customer inquiries, provide support, and automate routine tasks.",
-    // demo: "/placeholder.svg?height=600&width=300",
     features: [
       "Natural language understanding",
       "Multi-platform integration",
@@ -32,7 +32,6 @@ const aiServices = [
     icon: <BarChart className="h-5 w-5" />,
     description:
       "Data-driven insights and forecasting to help you make better business decisions and identify opportunities.",
-    demo: "/placeholder.svg?height=600&width=300",
     features: ["Sales forecasting", "Customer behavior analysis", "Trend identification", "Anomaly detection"],
   },
   {
@@ -40,15 +39,13 @@ const aiServices = [
     name: "Document Processing",
     icon: <FileText className="h-5 w-5" />,
     description: "Automated extraction and analysis of information from documents, invoices, receipts, and forms.",
-    demo: "/placeholder.svg?height=600&width=300",
     features: ["OCR and data extraction", "Form processing", "Document classification", "Information validation"],
   },
   {
     id: "vision",
     name: "Computer Vision",
-    icon: <Image className="h-5 w-5" />,
+    icon: <ImageIcon className="h-5 w-5" />,
     description: "Image and video analysis solutions for object detection, recognition, and visual inspection.",
-    demo: "/placeholder.svg?height=600&width=300",
     features: ["Object detection", "Facial recognition", "Product visual inspection", "Image classification"],
   },
   {
@@ -57,7 +54,6 @@ const aiServices = [
     icon: <Bot className="h-5 w-5" />,
     description:
       "Autonomous AI agents that can perform complex tasks, make decisions, and interact with other systems.",
-    demo: "/placeholder.svg?height=600&width=300",
     features: ["Task automation", "Multi-agent coordination", "Workflow optimization", "Adaptive learning"],
   },
   {
@@ -65,7 +61,6 @@ const aiServices = [
     name: "NL Processing",
     icon: <Brain className="h-5 w-5" />,
     description: "Text analysis, sentiment detection, and language generation for content creation and analysis.",
-    demo: "/placeholder.svg?height=600&width=300",
     features: ["Sentiment analysis", "Content summarization", "Language translation", "Text classification"],
   },
 ]
@@ -146,9 +141,9 @@ export default function FullStackAIDevelopmentPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 relative">
+      <section className="pt-20 md:pt-32 pb-12 md:pb-16 relative">
         <div className="container mx-auto px-4">
-          <div className="flex items-center mb-8">
+          <div className="flex items-center mb-6 md:mb-8">
             <Button asChild variant="outline" size="sm" className="mr-4">
               <Link href="/services">
                 <ArrowLeft size={16} className="mr-2" /> Back to Services
@@ -156,29 +151,33 @@ export default function FullStackAIDevelopmentPage() {
             </Button>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary">Full-Stack AI Development</h1>
-              <p className="text-xl text-foreground/80 mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center">
+            <div className="lg:col-span-4">
+              <h1 className="text-5xl md:text-5xl xl:text-6xl font-bold mb-3 md:mb-4 text-primary">Full-Stack AI Development</h1>
+              <p className="text-base sm:text-lg md:text-xl xl:text-2xl text-foreground/80 mb-5 md:mb-6 leading-tight">
                 Transform your business ideas into powerful software solutions with cutting-edge AI capabilities
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Button asChild size="lg">
+              <div className="flex flex-wrap gap-3 md:gap-4 mb-8 lg:mb-0">
+                <Button asChild size="lg" className="text-base md:text-lg">
                   <Link href="/#contact">Start Your Project</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg">
+                <Button asChild variant="outline" size="lg" className="text-base md:text-lg">
                   <Link href="#services">Explore Services</Link>
                 </Button>
               </div>
             </div>
-            <div className="relative">
-              <DeviceFrame>
-                <img
-                  src="/placeholder.svg?height=600&width=300"
-                  alt="AI Application Demo"
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </DeviceFrame>
+            <div className="lg:col-span-8 relative w-full">
+              <div className="w-full overflow-hidden">
+                <DeviceFrame type="macos">
+                  <Image
+                    src="https://lxbpjvrr41.ufs.sh/f/6KZjuRTQYJxHmqfmYRQnVOUpwFEZs8WCxTD1BjtRqv2hl9kL"
+                    alt="AI Application Demo"
+                    width={1200}
+                    height={675}
+                    className="w-full h-full object-cover"
+                  />
+                </DeviceFrame>
+              </div>
             </div>
           </div>
         </div>

@@ -7,15 +7,15 @@ export default function Hero() {
     <section className="relative h-screen flex items-center overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Grid lines */}
-        <div className="absolute inset-0 grid grid-cols-6 pointer-events-none">
+        {/* Grid lines with fade out effect */}
+        <div className="absolute inset-0 grid grid-cols-6 pointer-events-none before:absolute before:bottom-0 before:left-0 before:right-0 before:h-1/4 before:bg-gradient-to-t before:from-background before:to-transparent before:z-10">
           {[...Array(6)].map((_, i) => (
             <div key={i} className="border-l border-primary/5 h-full opacity-75"></div>
           ))}
         </div>
         <div className="absolute inset-0 grid grid-rows-6 pointer-events-none">
           {[...Array(6)].map((_, i) => (
-            <div key={i} className="border-t border-primary/5 w-full opacity-75"></div>
+            <div key={i} className="border-t border-primary/5 w-full opacity-85"></div>
           ))}
         </div>
       </div>
@@ -67,7 +67,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute inset-x-0 bottom-8 flex justify-center">
+      <div className="absolute inset-x-0 bottom-16 flex justify-center z-20">
         <ScrollIndicator />
       </div>
     </section>

@@ -33,7 +33,7 @@ export default function ProjectsSection() {
                   <img
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-300"
                   />
                 </div>
                 <CardContent className="flex-grow flex flex-col p-6">
