@@ -103,7 +103,7 @@ export default function ContactSection() {
                 <div className="flex space-x-4">
                   <a
                     href={`mailto:${contact.email}`}
-                    className="bg-secondary hover:bg-secondary/80 p-3 rounded-full transition-colors"
+                    className="bg-secondary hover:bg-primary/10 p-3 rounded-full transition-colors"
                     aria-label="Email"
                   >
                     <Mail className="h-5 w-5 text-primary" />
@@ -112,7 +112,7 @@ export default function ContactSection() {
                     href={contact.socialMedia.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-secondary hover:bg-secondary/80 p-3 rounded-full transition-colors"
+                    className="bg-secondary hover:bg-primary/10 p-3 rounded-full transition-colors"
                     aria-label="WhatsApp"
                   >
                     <svg
@@ -134,7 +134,7 @@ export default function ContactSection() {
                     href={contact.socialMedia.telegram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-secondary hover:bg-secondary/80 p-3 rounded-full transition-colors"
+                    className="bg-secondary hover:bg-primary/10 p-3 rounded-full transition-colors"
                     aria-label="Telegram"
                   >
                     <svg

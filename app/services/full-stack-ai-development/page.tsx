@@ -5,11 +5,13 @@ import Link from "next/link"
 import { ArrowLeft, Check, Code, Database, Cpu, Zap, Server, Globe, Bot, Brain, MessageSquare, BarChart, FileText, Image as ImageIcon } from "lucide-react"
 import Image from "next/image"
 import TechStackScroller from "@/components/tech-stack-scroller"
-import ServiceShowcase from "@/components/service-showcase"
+import ServiceShowcase from "@/components/services/service-showcase"
 import DeviceFrame from "@/components/device-frame"
 import MinimalProcessStepper, { type ProcessStep } from "@/components/minimal-process-stepper"
 import { aiDevelopmentStack } from "@/data/tech-stacks"
 import { developmentSteps } from "@/data/dev-process"
+import CTASection from "@/components/services/cta-section"
+import ServiceGridSection from "@/components/services/service-grid-section"
 
 // Define AI services data
 const aiServices = [
@@ -66,13 +68,7 @@ const aiServices = [
 ]
 
 // Define service cards
-type ServiceCard = {
-  icon: React.ReactNode
-  title: string
-  features: string[]
-}
-
-const serviceCards: ServiceCard[] = [
+const serviceCards = [
   {
     icon: <Cpu className="text-primary h-6 w-6" />,
     title: "AI-Powered Applications",
@@ -206,33 +202,10 @@ export default function FullStackAIDevelopmentPage() {
       </section>
 
       {/* Service Categories */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Comprehensive AI Development Services</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {serviceCards.map((card, index) => (
-              <div 
-                key={index} 
-                className="bg-background rounded-lg p-8 shadow-lg border border-primary/20 hover:border-primary/50 transition-all"
-              >
-                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
-                  {card.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-4">{card.title}</h3>
-                <ul className="space-y-3 mb-6">
-                  {card.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start">
-                      <Check size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceGridSection 
+        title="Comprehensive AI Development Services"
+        services={serviceCards}
+      />
 
       {/* Process Section - Using the minimal component */}
       <section className="py-16">
@@ -244,18 +217,12 @@ export default function FullStackAIDevelopmentPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 border-t border-border">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to transform your business with AI?</h2>
-          <p className="text-xl text-foreground/80 max-w-2xl mx-auto mb-8">
-            Let's discuss how custom AI solutions can help you achieve your business goals and stay ahead of the
-            competition.
-          </p>
-          <Button asChild size="lg" className="text-lg">
-            <Link href="/#contact">Schedule a Consultation</Link>
-          </Button>
-        </div>
-      </section>
+      <CTASection 
+        heading="Ready to transform your business with AI?"
+        text="Let's discuss how custom AI solutions can help you achieve your business goals and stay ahead of the competition."
+        buttonText="Schedule a Consultation"
+        buttonHref="/#contact"
+      />
 
       <Footer />
     </main>

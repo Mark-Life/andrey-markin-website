@@ -1,7 +1,4 @@
-"use client"
-
 import { cn } from "@/lib/utils"
-// import { Card } from "@/components/ui/card"
 
 export interface TechItem {
   name: string

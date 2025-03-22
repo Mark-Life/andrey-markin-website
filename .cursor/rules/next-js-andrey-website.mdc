@@ -1,0 +1,11 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Next.js website dev
+
+- Maximum server side rendering, for SEO;
+- Use server components;
+- Dont use "use client" if it's not requred and if requred, exaplain why;
