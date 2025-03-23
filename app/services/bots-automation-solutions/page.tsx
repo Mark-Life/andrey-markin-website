@@ -220,7 +220,7 @@ export default function BotsAutomationPage() {
     <ServicePage
       title="Bots & Automation Solutions"
       description="Streamline operations and enhance productivity with custom bots and intelligent automation systems"
-      heroImage="https://lxbpjvrr41.ufs.sh/f/6KZjuRTQYJxHqlp4dpM3CM09gQvVGuoixZF58rBtkIcaYUWD"
+      heroImage="https://lxbpjvrr41.ufs.sh/f/6KZjuRTQYJxHAOl984GNYH1VXDajv53cMporKuBtZPTik64h"
       heroImageAlt="Bot and Automation Systems"
       techStack={botsAutomationStack}
       showcaseTitle="Bot & Automation Solutions"

@@ -29,38 +29,38 @@ export const services: Service[] = [
     ],
     link: "/services/bots-automation-solutions",
   },
-  {
-    title: "Data Management & Analytics",
-    description: "Unlock insights from your data",
-    items: [
-      "Data Cleaning & Preprocessing",
-      "Business Intelligence",
-      "Data Analysis & Visualization",
-      "ETL Pipeline Development",
-    ],
-    link: "/services/data-management-analytics",
-  },
-  {
-    title: "Chatbot & Customer Success",
-    description: "Enhance customer experience with AI",
-    items: [
-      "AI Customer Service Chatbots",
-      "Support Ticket Integration",
-      "Multi-platform Chat Solutions",
-      "Analytics & Tracking",
-    ],
-    link: "/services/chatbot-customer-success",
-  },
-  {
-    title: "AI Fundraising",
-    description: "Innovative solutions for non-profits",
-    items: [
-      "Donor Management Platforms",
-      "Automated Reporting Systems",
-      "Digital Transformation",
-      "NGO & Social Impact Solutions",
-    ],
-    link: "/services/ai-fundraising",
-  },
+  // {
+  //   title: "Data Management & Analytics",
+  //   description: "Unlock insights from your data",
+  //   items: [
+  //     "Data Cleaning & Preprocessing",
+  //     "Business Intelligence",
+  //     "Data Analysis & Visualization",
+  //     "ETL Pipeline Development",
+  //   ],
+  //   link: "/services/data-management-analytics",
+  // },
+  // {
+  //   title: "Chatbot & Customer Success",
+  //   description: "Enhance customer experience with AI",
+  //   items: [
+  //     "AI Customer Service Chatbots",
+  //     "Support Ticket Integration",
+  //     "Multi-platform Chat Solutions",
+  //     "Analytics & Tracking",
+  //   ],
+  //   link: "/services/chatbot-customer-success",
+  // },
+  // {
+  //   title: "AI Fundraising",
+  //   description: "Innovative solutions for non-profits",
+  //   items: [
+  //     "Donor Management Platforms",
+  //     "Automated Reporting Systems",
+  //     "Digital Transformation",
+  //     "NGO & Social Impact Solutions",
+  //   ],
+  //   link: "/services/ai-fundraising",
+  // },
 ]
 

@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /
+
+Sitemap: https://andrey-markin.com/sitemap.xml
