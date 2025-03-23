@@ -68,7 +68,7 @@ export default function ServicePage({
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-20 md:pt-32 pb-12 md:pb-16 relative">
+      <section className="pt-20 md:pt-32 pb-12 md:pb-16 h-min-screen relative">
         <div className="container mx-auto px-4">
           <div className="flex items-center mb-6 md:mb-8">
             <Button asChild variant="outline" size="sm" className="mr-4">
@@ -108,14 +108,17 @@ export default function ServicePage({
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Tech Stack Section */}
-      <section className="">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto mt-12 mb-4 px-4">
           <TechStackScroller items={techStack} />
         </div>
       </section>
+
+      {/* Tech Stack Section */}
+      {/* <section className="">
+        <div className="container mx-auto px-4">
+          <TechStackScroller items={techStack} />
+        </div>
+      </section> */}
 
       {/* Services Showcase - Conditional */}
       {showcaseItems && showcaseItems.length > 0 && (
