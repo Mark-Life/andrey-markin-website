@@ -166,7 +166,7 @@ export class AgentOrchestrator {
                 offline.
               </p>
 
-              <h3>Real-time Audio Processing</h3>
+              <h3>Audio Processing</h3>
               <p>
                 Processing conversation audio in noisy tradeshow environments presented significant technical hurdles.
                 We implemented a custom audio processing pipeline with noise cancellation and speaker separation using
