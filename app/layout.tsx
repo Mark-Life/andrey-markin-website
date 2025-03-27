@@ -2,6 +2,7 @@ import type React from "react";
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Andrey Markin | Full-Stack AI Development",
@@ -24,6 +25,7 @@ export default function RootLayout({
           forcedTheme="dark"
         >
           {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
