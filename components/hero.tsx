@@ -67,9 +67,6 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute inset-x-0 bottom-16 flex justify-center z-20">
-        <ScrollIndicator />
-      </div>
     </section>
   )
 }
