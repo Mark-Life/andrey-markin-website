@@ -4,13 +4,11 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { services } from "@/data/services"
 import ServiceCard from "@/components/service-card"
-import MatrixBackground from "@/components/matrix-background"
 
 export default function ServicesPage() {
   return (
     <main>
       <Navbar />
-      {/* <MatrixBackground /> */}
       <section className="pt-32 pb-20 relative">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center text-primary">Services</h1>

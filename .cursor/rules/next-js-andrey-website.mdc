@@ -9,3 +9,4 @@ alwaysApply: true
 - Maximum server side rendering, for SEO;
 - Use server components;
 - Dont use "use client" if it's not requred and if requred, exaplain why;
+- code using server component model and next.js 15 best practices;
