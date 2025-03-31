@@ -12,7 +12,7 @@ const nextConfig = {
         protocol: "https",
         hostname: "lxbpjvrr41.ufs.sh",
         port: "",
-        pathname: "/**",
+        pathname: "/**/*",
       },
     ],
   },

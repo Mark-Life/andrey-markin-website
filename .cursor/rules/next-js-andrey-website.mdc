@@ -6,7 +6,6 @@ alwaysApply: true
 
 # Next.js website dev
 
-- Maximum server side rendering, for SEO;
-- Use server components;
-- Dont use "use client" if it's not requred and if requred, exaplain why;
-- code using server component model and next.js 15 best practices;
+- Code using server component model and next.js 15 best practices;
+- Dont use "use client" if it's not required and if required, explain why;
+- Middleware – in next is basically rout-intercepter and it doesn’t run in node, it runs before node, so we can redirect user and not to spin up app and just redirect user. So don’t reply on Middleware for important things like only place for auth. You can add info to the request via middleware, so we can check later the info about the user.
