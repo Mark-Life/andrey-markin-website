@@ -6,6 +6,12 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { projects } from "@/data/projects"
 import Image from "next/image"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Projects | Andrey Markin",
+  description: "Explore my portfolio of successful client projects and innovative solutions",
+}
 
 export default function ProjectsPage() {
   return (

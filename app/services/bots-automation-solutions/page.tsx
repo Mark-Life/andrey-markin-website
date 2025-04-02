@@ -17,7 +17,7 @@ import ServicePage, {
   ServiceShowcaseItem 
 } from "@/components/services/service-page"
 import { TechItem } from "@/data/tech-stacks"
-
+import { Metadata } from "next"
 // Define tech stack data
 const botsAutomationStack: TechItem[] = [
   {
@@ -214,6 +214,11 @@ const serviceCards: ServiceCardItem[] = [
     ],
   },
 ]
+
+export const metadata: Metadata = {
+  title: "Bots & Automation Solutions | Andrey Markin",
+  description: "Streamline operations and enhance productivity with custom bots and intelligent automation systems",
+}
 
 export default function BotsAutomationPage() {
   return (

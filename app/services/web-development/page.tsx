@@ -17,6 +17,7 @@ import ServicePage, {
   ServiceShowcaseItem 
 } from "@/components/services/service-page"
 import { TechItem } from "@/data/tech-stacks"
+import { Metadata } from "next"
 
 // Define tech stack data
 const webDevelopmentStack: TechItem[] = [
@@ -221,6 +222,11 @@ const serviceCards: ServiceCardItem[] = [
     ],
   },
 ]
+
+export const metadata: Metadata = {
+  title: "Web Development | Andrey Markin",
+  description: "Modern Next.js web solutions with server-side rendering for optimal SEO and exceptional user experiences",
+}
 
 export default function WebDevelopmentPage() {
   return (

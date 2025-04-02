@@ -17,6 +17,7 @@ import ServicePage, {
   ServiceShowcaseItem 
 } from "@/components/services/service-page"
 import { TechItem } from "@/data/tech-stacks"
+import { Metadata } from "next"
 
 // Define tech stack data
 const aiDevelopmentStack: TechItem[] = [
@@ -204,6 +205,11 @@ const serviceCards: ServiceCardItem[] = [
     ],
   },
 ]
+
+export const metadata: Metadata = {
+  title: "Full-Stack AI Development | Andrey Markin",
+  description: "Transform your business ideas into powerful software solutions with cutting-edge AI capabilities",
+}
 
 export default function FullStackAIDevelopmentPage() {
   return (

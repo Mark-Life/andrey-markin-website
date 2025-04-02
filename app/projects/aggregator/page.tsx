@@ -6,7 +6,7 @@ import { ArrowLeft } from "lucide-react"
 import Image from "next/image"
 import { projectsById } from "@/data/projects"
 import TechStackScroller, { TechItem } from "@/components/tech-stack-scroller"
-
+import { Metadata } from "next"
 
 const aggregatorStack: TechItem[] = [
   {
@@ -53,6 +53,11 @@ const aggregatorStack: TechItem[] = [
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS42uI2JPTWjq_uNG9UFt98jnpHODVQrQHysg&s?height=60&width=60",
   },
 ]
+
+export const metadata: Metadata = {
+  title: "Intelligent Aggregator Platform | Andrey Markin",
+  description: "A high-performance, SEO-optimized aggregator platform built with Next.js, featuring AI-powered search and intelligent data exploration capabilities.",
+}
 
 export default function AggregatorPage() {
   return (

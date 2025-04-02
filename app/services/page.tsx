@@ -4,6 +4,12 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { services } from "@/data/services"
 import ServiceCard from "@/components/service-card"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Services | Andrey Markin",
+  description: "Explore our range of services and find the perfect solution for your needs.",
+}
 
 export default function ServicesPage() {
   return (
