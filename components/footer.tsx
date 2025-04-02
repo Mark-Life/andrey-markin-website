@@ -5,9 +5,9 @@ export default function Footer() {
     <footer className="py-8 border-t border-border">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
+          <div className="mb-4 md:mb-0 text-center md:text-left">
             <p className="text-foreground/70">Mark Life Ltd</p>
-            <p className="text-foreground/70 text-sm">VAT: BG208147965</p>
+            <p className="text-foreground/70 text-sm">BG208147965</p>
           </div>
 
           <div className="flex space-x-6">
@@ -26,4 +26,3 @@ export default function Footer() {
     </footer>
   )
 }
-

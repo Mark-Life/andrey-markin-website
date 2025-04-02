@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { projects } from "@/data/projects"
+import Image from "next/image"
 
 export default function ProjectsPage() {
   return (
@@ -22,19 +23,21 @@ export default function ProjectsPage() {
           <div className="flex justify-center">
             <div
               className={`grid gap-8 ${
-                projects.length === 1
+                projects.filter(project => !project.hide).length === 1
                   ? "grid-cols-1 max-w-md"
-                  : projects.length === 2
+                  : projects.filter(project => !project.hide).length === 2
                     ? "grid-cols-1 md:grid-cols-2 max-w-3xl"
                     : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-full"
               }`}
             >
-              {projects.map((project, index) => (
+              {projects.filter(project => !project.hide).map((project, index) => (
                 <Card key={index} className="bg-secondary/50 border-primary/20 overflow-hidden h-full flex flex-col">
                   <div className="aspect-video w-full overflow-hidden bg-muted">
-                    <img
+                    <Image
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}
+                      width={1800}
+                      height={1200}
                       className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                     />
                   </div>
@@ -50,7 +53,7 @@ export default function ProjectsPage() {
                     </div>
                     <Button asChild variant="outline" className="mt-auto">
                       <Link href={project.link} className="flex items-center justify-center">
-                        View Case Study <ArrowRight size={16} className="ml-2" />
+                        View Case <ArrowRight size={16} className="ml-2" />
                       </Link>
                     </Button>
                   </CardContent>

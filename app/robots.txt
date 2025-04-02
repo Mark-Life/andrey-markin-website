@@ -1,4 +1,5 @@
 User-Agent: *
 Allow: /
+Disallow: /projects/tradecapture-ai
 
 Sitemap: https://andrey-markin.com/sitemap.xml

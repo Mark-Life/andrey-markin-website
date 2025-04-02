@@ -19,9 +19,9 @@ export default function Navbar() {
           <Link href="/services" className="text-foreground/80 hover:text-primary transition-colors" prefetch>
             Services
           </Link>
-          {/* <Link href="/projects" className="text-foreground/80 hover:text-primary transition-colors" prefetch>
+          <Link href="/projects" className="text-foreground/80 hover:text-primary transition-colors" prefetch>
             Projects
-          </Link> */}
+          </Link>
           <Link href="/#reviews" className="text-foreground/80 hover:text-primary transition-colors">
             Reviews
           </Link>
@@ -55,13 +55,13 @@ export default function Navbar() {
             >
               Services
             </Link>
-            {/* <Link
+            <Link
               href="/projects"
               className="text-foreground/80 hover:text-primary transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Projects
-            </Link> */}
+            </Link>
             <Link
               href="/#reviews"
               className="text-foreground/80 hover:text-primary transition-colors py-2"

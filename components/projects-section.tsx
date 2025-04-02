@@ -3,10 +3,10 @@ import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { projects, type Project } from "@/data/projects"
-
+import Image from "next/image"
 export default function ProjectsSection() {
-  // Only show up to 3 projects on the home page
-  const featuredProjects = projects.slice(0, 3)
+  // Filter out hidden projects and show up to 3 visible projects on the home page
+  const featuredProjects = projects.filter(project => !project.hide).slice(0, 3)
 
   return (
     <section id="projects" className="py-20 relative">
@@ -30,9 +30,11 @@ export default function ProjectsSection() {
             {featuredProjects.map((project: Project) => (
               <Card key={project.id} className="bg-secondary/50 border-primary/20 overflow-hidden h-full flex flex-col">
                 <div className="aspect-video w-full overflow-hidden bg-muted">
-                  <img
+                  <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
+                    width={1800}
+                    height={1200}
                     className="w-full h-full object-cover transition-transform duration-300"
                   />
                 </div>
