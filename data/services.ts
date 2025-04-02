@@ -3,6 +3,7 @@ export interface Service {
   description: string
   items: string[]
   link: string
+  slug?: string
 }
 
 export const services: Service[] = [
@@ -10,12 +11,14 @@ export const services: Service[] = [
     title: "Full-stack AI Development",
     description: "Transform ideas into AI-powered solutions",
     items: ["Custom AI Solutions", "Automation Systems", "Data Pipeline Development", "Full-stack App deployments"],
+    slug: "full-stack-ai-development",
     link: "/services/full-stack-ai-development",
   },
   {
     title: "Web Development",
     description: "Modern web solutions for your business",
     items: ["Progressive Web Apps", "Full-Stack Applications", "E-commerce Solutions", "API Development & Integration"],
+    slug: "web-development",
     link: "/services/web-development",
   },
   {
@@ -27,6 +30,7 @@ export const services: Service[] = [
       "Database Automation Systems",
       "Workflow Automation Tools",
     ],
+    slug: "bots-automation-solutions",
     link: "/services/bots-automation-solutions",
   },
   // {

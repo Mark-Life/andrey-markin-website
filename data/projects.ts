@@ -6,6 +6,7 @@ export interface Project {
   tags: string[]
   link: string
   hide?: boolean
+  slug?: string
 }
 
 export const projectsById: Record<string, Project> = {
@@ -15,6 +16,7 @@ export const projectsById: Record<string, Project> = {
     description: "High-performance, SEO-optimized aggregator platform built with Next.js",
     image: "https://lxbpjvrr41.ufs.sh/f/6KZjuRTQYJxHHJ76tUspOSZHF573cwrDvLBxKTg1AnaMC9ej",
     tags: ["Next.js", "Supabase", "OpenAI", "Tailwind CSS"],
+    slug: "aggregator",
     link: "/projects/aggregator",
   },
   TradeCaptureAI: {
